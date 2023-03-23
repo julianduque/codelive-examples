@@ -1,0 +1,10 @@
+<template>
+  <template if:true={accounts.data}>
+    <template for:each={accounts.data} for:item="account">
+      <p key={account.Id}>{account.Name} - {account.AnnualRevenue}</p>
+    </template>
+  </template>
+  <template if:true={accounts.error}>
+    <p>{accounts.error}</p>
+  </template>
+</template>

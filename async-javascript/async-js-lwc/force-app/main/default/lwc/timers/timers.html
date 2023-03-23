@@ -1,0 +1,54 @@
+<template>
+  <c-notification-message message="Let's explore setTimeout and setInterval JavaScript timers"></c-notification-message>
+  <div class="slds-text-heading_medium slds-m-top_small">setTimeout</div>
+  <div class="slds-grid slds-gutters slds-m-top_small">
+    <div class="slds-col slds-size_2-of-3">
+      <lightning-input
+        type="number"
+        name="timeout-milliseconds"
+        label="Timeout value (in ms)"
+        value={timeoutTime}
+        onchange={handleChangeTimeout}>
+      </lightning-input>
+    </div>
+    <div class="slds-col slds-size_1-of-3 slds-align-bottom">
+      <lightning-button
+        label="Show Message"
+        variant="brand"
+        disabled={isWaiting}
+        onclick={startTimeout}>
+      </lightning-button>
+    </div>
+  </div>
+  <div class="slds-text-heading_medium slds-m-top_small">setInterval</div>
+  <div class="slds-grid slds-gutters slds-m-top_small">
+    <div class="slds-col slds-size_2-of-3">
+      <lightning-input
+        type="number"
+        name="interval-milliseconds"
+        label="Interval value (in ms)"
+        value={intervalTime}
+        onchange={handleChangeInterval}>
+      </lightning-input>
+    </div>
+    <div class="slds-col slds-size_1-of-3 slds-align-bottom">
+      <lightning-button-group>
+        <lightning-button
+          label="Start"
+          variant="success"
+          disabled={isRunning}
+          onclick={startTimer}>
+        </lightning-button>
+        <lightning-button
+          label="Stop"
+          variant="error"
+          disabled={isNotRunning}
+          onclick={stopTimer}>
+        </lightning-button>
+      </lightning-button-group>
+    </div>
+  </div>
+  <div class="slds-text-align_center slds-m-top_small">
+    <span class="slds-badge slds-theme_success">{counter}</span>
+  </div>
+</template>

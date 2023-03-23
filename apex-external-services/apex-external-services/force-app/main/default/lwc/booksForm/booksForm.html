@@ -1,0 +1,28 @@
+<template>
+  <c-notification-message
+    message="Create a book"
+  ></c-notification-message>
+  <div class="slds-p-around_medium">
+    <lightning-input
+      type="text"
+      label="Title"
+      value={title}
+      onchange={handleTitleChange}
+      class="slds-p-around_small"
+      required></lightning-input>
+    <lightning-input
+      type="text"
+      label="Author"
+      value={author}
+      onchange={handleAuthorChange}
+      class="slds-p-around_small"
+      required></lightning-input>
+    <lightning-button
+      variant="brand"
+      label="Create"
+      title="Create book"
+      onclick={handleCreate}
+      class="slds-p-around_small"
+      ></lightning-button>
+  </div>
+</template>

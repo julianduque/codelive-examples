@@ -1,0 +1,20 @@
+<template>
+  <c-notification-message
+    message="Getting the list of books from the API"
+  ></c-notification-message>
+  <div class="slds-text-heading_medium slds-p-around_small">
+    Books
+    <lightning-button
+      label="Refresh"
+      title="Refresh list"
+      onclick={handleRefresh}
+      class="slds-p-around_small"
+      ></lightning-button>
+  </div>
+  <lightning-datatable
+    key-field="id"
+    data={data}
+    columns={columns}
+    class="slds-p-around_small"
+  ></lightning-datatable>
+</template>

@@ -1,0 +1,9 @@
+<template>
+  <lightning-input type="text" label="Account Name" onchange={handleNameChange}></lightning-input>
+  <lightning-input type="text" label="Annual Revenue" onchange={handleAnnualRevenueChange}></lightning-input>
+  <lightning-button label="Create Account" variant="brand" onclick={createAccount}></lightning-button>
+  <lightning-record-form
+    object-api-name={objectApiName}
+    fields={fields}>
+  </lightning-record-form>
+</template>

@@ -1,0 +1,21 @@
+<template>
+  <c-notification-message message="Let's explore Promises and async/await"></c-notification-message>
+  <div class="slds-grid slds-gutters slds-m-top_small">
+    <div class="slds-col slds-size_2-of-3">
+      <lightning-datatable
+        key-field="id"
+        hide-checkbox-column
+        data={data}
+        columns={columns}>
+      </lightning-datatable>
+    </div>
+    <div class="slds-col slds-size_1-of-3 slds-align-top">
+      <lightning-button
+        label="Load Movies"
+        variant="brand"
+        disabled={isLoading}
+        onclick={getMoviesAsync}>
+      </lightning-button>
+    </div>
+  </div>
+</template>

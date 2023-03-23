@@ -1,0 +1,6 @@
+.code-box {
+  border-style: solid;
+  border-color: #333;
+  background-color: #ccc;
+  min-width: var(--lwc-spacingMedium, 1rem);
+}
