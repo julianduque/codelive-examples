@@ -1,0 +1,28 @@
+<template>
+  <lightning-card title="LWC Composition Demo">
+    <lightning-tabset variant="scoped">
+      <lightning-tab label="Gallery">
+        <c-gallery title="Cars" show-controls>
+          <c-gallery-item
+            src="https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/ecars/car_white.jpg"></c-gallery-item>
+          <c-gallery-item
+            src="https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/ecars/car_black.jpg"></c-gallery-item>
+          <c-gallery-item
+            src="https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/ecars/car_red.jpg"></c-gallery-item>
+          <c-gallery-item
+            src="https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/ecars/car_green.jpg"></c-gallery-item>
+          <c-gallery-item
+            src="https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/ecars/car_blue.jpg"></c-gallery-item>
+        </c-gallery>
+        <lightning-button label="Next" onclick={handleNext}></lightning-button>
+      </lightning-tab>
+      <lightning-tab label="Notifications">
+        <c-notification-message>This is default</c-notification-message>
+        <c-notification-message variant="info">This is info</c-notification-message>
+        <c-notification-message variant="success">This is success</c-notification-message>
+        <c-notification-message variant="warning">This is warning</c-notification-message>
+        <c-notification-message variant="error">This is <strong>error</strong></c-notification-message>
+      </lightning-tab>
+    </lightning-tabset>
+  </lightning-card>
+</template>

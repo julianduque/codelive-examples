@@ -1,0 +1,31 @@
+<template>
+  <lightning-card title={title}>
+    <template lwc:if={showControls}>
+      <p slot="actions">
+        <lightning-button
+          label="« Previous"
+          variant="brand"
+          class="slds-m-around_xxx-small"
+          onclick={prev}
+          disabled={isEmpty}></lightning-button>
+        <lightning-button
+          label="Next »"
+          variant="brand"
+          class="slds-m-around_xxx-small"
+          onclick={next}
+          disabled={isEmpty}></lightning-button>
+      </p>
+    </template>
+    <template lwc:if={isEmpty}>
+      <c-notification-message variant="warning">
+        No items to display
+      </c-notification-message>
+    </template>
+    <div class="items">
+      <slot onslotchange={handleSlotChange}></slot>
+    </div>
+    <p slot="footer">
+      {currentItem} of {totalItems}
+    </p>
+  </lightning-card>
+</template>

@@ -1,0 +1,12 @@
+<template>
+  <div class="slds-scoped-notification slds-media slds-media_center slds-m-around_xx-small slds-scoped-notification_light" role="status">
+    <div class="slds-media__figure">
+      <lightning-icon
+        icon-name={variantIcon}
+        alternative-text={variantAltText}></lightning-icon>
+    </div>
+    <div class="slds-media__body">
+      <slot></slot>
+    </div>
+  </div>
+</template>
