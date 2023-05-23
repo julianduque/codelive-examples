@@ -1,0 +1,10 @@
+<template>
+  <template lwc:if={recordId}>
+    <lightning-card title={Name}>
+      <img src={Image_Url__c} alt={Description__c} />
+    </lightning-card>
+  </template>
+  <template lwc:else>
+    <c-notification-message variant="warning">No car to display</c-notification-message>
+  </template>
+</template>

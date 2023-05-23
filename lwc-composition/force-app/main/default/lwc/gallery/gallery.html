@@ -1,5 +1,5 @@
 <template>
-  <lightning-card title={title}>
+  <lightning-card title={title} onimageadded={handleImageAdded}>
     <template lwc:if={showControls}>
       <p slot="actions">
         <lightning-button
@@ -21,11 +21,13 @@
         No items to display
       </c-notification-message>
     </template>
-    <div class="items">
-      <slot onslotchange={handleSlotChange}></slot>
+    <div class="items" >
+      <slot></slot>
     </div>
-    <p slot="footer">
-      {currentItem} of {totalItems}
-    </p>
+    <template lwc:if={showPagination}>
+      <p slot="footer">
+        {currentItem} of {totalItems}
+      </p>
+    </template>
   </lightning-card>
 </template>

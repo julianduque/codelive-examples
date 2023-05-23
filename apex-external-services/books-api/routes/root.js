@@ -2,6 +2,7 @@ import { bookSchema, errorSchema } from '../schemas/index.js'
 import { randomUUID } from 'node:crypto'
 
 export default async function (fastify, opts) {
+  // Add schemas to Fastify
   fastify.addSchema({
     $id: 'book',
     ...bookSchema
@@ -12,6 +13,7 @@ export default async function (fastify, opts) {
     ...errorSchema
   })
 
+  // GET /books
   fastify.get(
     '/books',
     {
@@ -30,7 +32,6 @@ export default async function (fastify, opts) {
       const client = await fastify.pg.connect()
       try {
         const { rows: books } = await client.query('SELECT id, title, author, published_at AS "publishedAt" FROM books')
-        console.log(books)
         reply.send(books)
       } catch (error) {
         reply
@@ -42,11 +43,12 @@ export default async function (fastify, opts) {
     }
   )
 
+  // POST /books
   fastify.post(
     '/books',
     {
       schema: {
-        body: { $ref: 'book#', required: [ 'author', 'title' ] },
+        body: { $ref: 'book#', required: ['author', 'title'] },
         response: {
           201: {
             description: 'Returns the book that has been created',
@@ -66,7 +68,7 @@ export default async function (fastify, opts) {
           'INSERT INTO books(id, title, author) VALUES($1, $2, $3) RETURNING *',
           [id, title, author]
         )
-        const [ newBook ] = books;
+        const [newBook] = books
         reply.code(201).send(newBook)
       } catch (error) {
         reply
@@ -78,7 +80,7 @@ export default async function (fastify, opts) {
     }
   )
 
-  fastify.get('/', async function (request, reply) {
+  fastify.get('/', { schema: { hide: true } }, async function (request, reply) {
     reply.status(301).redirect('/api-docs')
   })
 }

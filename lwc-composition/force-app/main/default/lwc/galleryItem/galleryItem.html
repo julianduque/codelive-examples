@@ -1,5 +1,15 @@
 <template>
-  <div class="slds-box slds-var-m-around_medium">
-    <img src={src} />
-  </div>
+  <a href="#" onclick={handleClick}>
+    <div class="slds-grid slds-grid_vertical slds-align_absolute-center">
+      <div class="slds-col slds-text-title_bold">
+        {title}
+      </div>
+      <div class="slds-col">
+        <img src={src} alt={alt} title={title} />
+      </div>
+      <div class="slds-col slds-text-font_monospace">
+        {alt}
+      </div>
+    </div>
+  </a>
 </template>

@@ -10,3 +10,6 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+
+# Admin Profile
+force-app/main/default/profiles/Admin.profile-meta.xml
