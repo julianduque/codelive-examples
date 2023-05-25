@@ -18,6 +18,7 @@ export default async function (fastify, opts) {
     '/books',
     {
       schema: {
+        description: "Get available books",
         response: {
           200: {
             description: 'Returns a list of books',
@@ -48,6 +49,7 @@ export default async function (fastify, opts) {
     '/books',
     {
       schema: {
+        description: "Create a book",
         body: { $ref: 'book#', required: ['author', 'title'] },
         response: {
           201: {

@@ -28,7 +28,7 @@ export default async function (fastify, opts) {
     openapi: {
       info: {
         title: 'Books API',
-        description: 'An external API to manage a book store',
+        description: 'An external API to manage a bookstore',
         version: '1.0.0'
       }
     },
